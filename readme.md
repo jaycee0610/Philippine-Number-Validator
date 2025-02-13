@@ -1,22 +1,21 @@
 ![Screenshot](https://raw.githubusercontent.com/jaycee0610/Philippine-Number-Validator/refs/heads/main/image.png)
 
-
-# Philippine Number Validator
+# 📱 Philippine Number Validator
 
 Philippine Number Validator is a web-based tool that helps you identify the network operator of a mobile number in the Philippines. It can determine whether the number belongs to Smart, TNT, Globe, TM, or DITO. Additionally, it can check the activity status of a mobile number using the GCash API and an online database.
 
-https://phnumber.rootscratch.com/
-https://gxchange-verify.rootscratch.com/ - (/{mobile_number}/{api_key}/)
+- 🌐 https://phnumber.rootscratch.com/
+- 🌐 https://gxchange-verify.rootscratch.com/ - (/{mobile_number}/{api_key}/)
 
-## Features
+## ✨ Features
 
-- Validate the network operator of a mobile number.
-- Generate random mobile numbers.
-- Check the activity status of a mobile number.
-- Copy validated numbers to the clipboard.
-- View request logs.
+- ✅ Validate the network operator of a mobile number.
+- 🔢 Generate random mobile numbers.
+- 📊 Check the activity status of a mobile number.
+- 📋 Copy validated numbers to the clipboard.
+- 📜 View request logs.
 
-## Installation
+## 🛠️ Installation
 
 1. Clone the repository to your local machine.
     ```bash
@@ -31,7 +30,7 @@ https://gxchange-verify.rootscratch.com/ - (/{mobile_number}/{api_key}/)
 5. Start the Apache server from the XAMPP control panel.
 6. Open your web browser and navigate to `http://localhost/Philippine-Number-Validator`.
 
-## Usage
+## 🚀 Usage
 
 1. **Verify Mobile Network Operator:**
     - Enter a list of mobile numbers in the provided textarea.
@@ -49,8 +48,9 @@ https://gxchange-verify.rootscratch.com/ - (/{mobile_number}/{api_key}/)
     - Click the "Validate" button to check the activity status of each number.
     - The results will be displayed in the "Live Mobile Number" textarea.
     - The request logs will be displayed in the "Request Logs" section.
+    - This feature checks if the mobile number is registered online.
 
-## Code Explanation
+## 📝 Code Explanation
 
 The main functionality is implemented in the `index.php` file. The JavaScript code handles the validation and activity checking processes.
 
@@ -64,14 +64,14 @@ The `generateRandom` button generates a list of random mobile numbers and displa
 
 ### Check Mobile Number Activity
 
-The `validateActivity` button triggers the activity checking process. The JavaScript code sends requests to the provided URL and handles the responses accordingly. The interval between requests is adjusted based on the response to avoid rate limiting.
+The `validateActivity` button triggers the activity checking process. The JavaScript code sends requests to the provided URL and handles the responses accordingly. 
 
-## Acknowledgements
+## 🙏 Acknowledgements
 
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [jQuery](https://jquery.com/)
 
-## Contact
+## 📧 Contact
 
 For any inquiries or issues, please contact [jaycee@rootscratch.com](mailto:jaycee@rootscratch.com).
