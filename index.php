@@ -3,13 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PH Number Validator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="icon" href="https://rootscratch.com/helloworld/assets/img/favicon.png" type="image/x-icon">
+    <meta name="description" content="Philippine Mobile Number Validator is a tool that helps you identify the network operator of a mobile number. It can determine whether the number belongs to Smart, TNT, Globe, TM, or DITO.">
+    <meta name="keywords" content="Philippine Mobile Number Validator, Smart, TNT, Globe, TM, DITO, mobile network operator, phone number validation">
+    <meta property="og:title" content="Philippine Mobile Number Validator">
+    <meta property="og:description" content="Identify the network operator of a Philippine mobile number.">
+    <meta property="og:image" content="https://phnumber.rootscratch.com/image.png">
+    <meta property="og:url" content="https://phnumber.rootscratch.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Philippine Mobile Number Validator">
+    <meta name="twitter:description" content="Identify the network operator of a Philippine mobile number.">
+    <meta name="twitter:image" content="https://phnumber.rootscratch.com/image.png">
 </head>
 
 <body>
@@ -86,7 +96,9 @@
             </div>
         </div>
 
-        <h3 class="mt-3">Check Mobile Number Activity</h3>
+        <hr>
+
+        <h3 class="mt-5">Check Mobile Number Activity</h3>
         <p>
             Use this section to verify if a mobile number is currently active.
             We utilize the GCash API and an online database to determine the status of the number.
@@ -100,8 +112,12 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="">Enter API Key (Optional)</label>
-                            <input type="text" class="form-control mb-3" id="api_key">
+                            <label for="">Enter API Key</label>
+                            <ul>
+                                <li><strong>DEMO</strong> - 15 Seconds Per Request</li>
+                                <li>Contact Us If You want to get an API key</li>
+                            </ul>
+                            <input type="text" class="form-control mb-3" id="api_key" value="demo">
 
                             <label for="phone" class="form-label">Phone Number List <span class="badge bg-danger">Max : 1000</span></label>
                             <textarea class="form-control" id="activity_phone_numbers" rows="10" placeholder="091234567890" style="resize: none; outline: none; box-shadow: none;"></textarea>
@@ -204,8 +220,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                requestLogs.innerText += `Checked ${number}: ${JSON.stringify(data)}\n`;
-                requestLogs.scrollTop = requestLogs.scrollHeight;
+                requestLogs.innerText = `Checked ${number}: ${JSON.stringify(data)}\n` + requestLogs.innerText;
 
                 if (data.success) {
                 liveNumbers.value += (liveNumbers.value ? '\n' : '') + number;
@@ -215,8 +230,7 @@
                 checkNumber(index + 1);
             })
             .catch(error => {
-                requestLogs.innerText += `Error checking ${number}: ${error}\n`;
-                requestLogs.scrollTop = requestLogs.scrollHeight;
+                requestLogs.innerText = `Error checking ${number}: ${error}\n` + requestLogs.innerText;
 
                 checkNumber(index + 1);
             });
