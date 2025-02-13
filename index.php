@@ -112,17 +112,19 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="mb-3">
+
                             <label for="">Enter API Key</label>
-                            <ul>
-                                <li><strong>DEMO</strong> - 15 Seconds Per Request</li>
-                                <li>Contact Us If You want to get an API key</li>
-                            </ul>
                             <input type="text" class="form-control mb-3" id="api_key" value="demo">
 
                             <label for="phone" class="form-label">Phone Number List <span class="badge bg-danger">Max : 1000</span></label>
                             <textarea class="form-control" id="activity_phone_numbers" rows="10" placeholder="091234567890" style="resize: none; outline: none; box-shadow: none;"></textarea>
                         </div>
-                        <button type="button" id="validateActivity" class="btn btn-success w-100">Validate</button>
+                        <button type="button" id="validateActivity" class="btn btn-success mb-3 w-100">Validate</button>
+                        <ul>
+                            <li><strong>DEMO</strong> - 15 Seconds Waiting for Request</li>
+                            <li>Contact Us If You want to get an API key</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
@@ -210,30 +212,30 @@
             var liveNumbers = document.getElementById('liveNumbers');
 
             function checkNumber(index) {
-            if (index >= phoneNumbers.length) return;
+                if (index >= phoneNumbers.length) return;
 
-            var number = phoneNumbers[index];
-            var url = `https://gxchange-verify.rootscratch.com/${number}/${apiKey}`;
+                var number = phoneNumbers[index];
+                var url = `https://gxchange-verify.rootscratch.com/${number}/${apiKey}`;
 
-            fetch(url, {
-                method: 'GET'
-            })
-            .then(response => response.json())
-            .then(data => {
-                requestLogs.innerText = `Checked ${number}: ${JSON.stringify(data)}\n` + requestLogs.innerText;
+                fetch(url, {
+                        method: 'GET'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        requestLogs.innerText = `Checked ${number}: ${JSON.stringify(data)}\n` + requestLogs.innerText;
 
-                if (data.success) {
-                liveNumbers.value += (liveNumbers.value ? '\n' : '') + number;
-                document.getElementById('liveCount').innerText = liveNumbers.value.split('\n').length;
-                }
+                        if (data.success) {
+                            liveNumbers.value += (liveNumbers.value ? '\n' : '') + number;
+                            document.getElementById('liveCount').innerText = liveNumbers.value.split('\n').length;
+                        }
 
-                checkNumber(index + 1);
-            })
-            .catch(error => {
-                requestLogs.innerText = `Error checking ${number}: ${error}\n` + requestLogs.innerText;
+                        checkNumber(index + 1);
+                    })
+                    .catch(error => {
+                        requestLogs.innerText = `Error checking ${number}: ${error}\n` + requestLogs.innerText;
 
-                checkNumber(index + 1);
-            });
+                        checkNumber(index + 1);
+                    });
             }
 
             checkNumber(0);
