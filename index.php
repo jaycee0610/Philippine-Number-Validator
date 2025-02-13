@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>PH Number Validator</title>
+    <title>Philippine Mobile Number Generator & Validator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -12,12 +12,12 @@
     <link rel="icon" href="https://rootscratch.com/helloworld/assets/img/favicon.png" type="image/x-icon">
     <meta name="description" content="Philippine Mobile Number Validator is a tool that helps you identify the network operator of a mobile number. It can determine whether the number belongs to Smart, TNT, Globe, TM, or DITO.">
     <meta name="keywords" content="Philippine Mobile Number Validator, Smart, TNT, Globe, TM, DITO, mobile network operator, phone number validation">
-    <meta property="og:title" content="Philippine Mobile Number Validator">
+    <meta property="og:title" content="Philippine Mobile Number Generator & Validator">
     <meta property="og:description" content="Identify the network operator of a Philippine mobile number.">
     <meta property="og:image" content="https://phnumber.rootscratch.com/image.png">
     <meta property="og:url" content="https://phnumber.rootscratch.com/">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Philippine Mobile Number Validator">
+    <meta name="twitter:title" content="Philippine Mobile Number Generator & Validator">
     <meta name="twitter:description" content="Identify the network operator of a Philippine mobile number.">
     <meta name="twitter:image" content="https://phnumber.rootscratch.com/image.png">
 </head>
