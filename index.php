@@ -101,7 +101,6 @@
         <h3 class="mt-5">Check Mobile Number Activity</h3>
         <p>
             Use this section to verify if a mobile number is currently active.
-            We utilize the GCash API and an online database to determine the status of the number.
             This feature is intended for marketing and educational purposes only.
             Please ensure to send requests at intervals of at least 15 seconds to avoid rate limiting.
             We are not responsible for any malicious activity by users of this tool.
@@ -222,7 +221,7 @@
                     })
                     .then(response => response.json())
                     .then(data => {
-                        requestLogs.innerText = `Checked ${number}: ${JSON.stringify(data)}\n` + requestLogs.innerText;
+                        requestLogs.innerText = `Number : ${number} | Response : ${JSON.stringify(data)}\n` + requestLogs.innerText;
 
                         if (data.success) {
                             liveNumbers.value += (liveNumbers.value ? '\n' : '') + number;
