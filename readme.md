@@ -5,6 +5,9 @@
 
 Philippine Number Validator is a web-based tool that helps you identify the network operator of a mobile number in the Philippines. It can determine whether the number belongs to Smart, TNT, Globe, TM, or DITO. Additionally, it can check the activity status of a mobile number using the GCash API and an online database.
 
+https://phnumber.rootscratch.com/
+https://gxchange-verify.rootscratch.com/ - (/{mobile_number}/{api_key}/)
+
 ## Features
 
 - Validate the network operator of a mobile number.
