@@ -28,7 +28,7 @@
         <div class="text-center d-block">
             <img src="rootscratch.svg" alt="Rootscratch Logo" class="img-fluid mx-auto d-inline-block mb-0" style="width: 140px;">
         </div>
-        <h2 class="text-center text-white ps-5 pe-5 mb-3"><span class="">Philippine</span> Mobile Number Validator</h2>
+        <h2 class="text-center text-white ps-5 pe-5 mb-3"><span class="">Philippine</span> Mobile Number Generator & Validator</h2>
     </div>
 
     <div class="container">
