@@ -1,3 +1,6 @@
+![Screenshot](https://raw.githubusercontent.com/jaycee0610/Philippine-Number-Validator/refs/heads/main/image.png)
+
+
 # Philippine Number Validator
 
 Philippine Number Validator is a web-based tool that helps you identify the network operator of a mobile number in the Philippines. It can determine whether the number belongs to Smart, TNT, Globe, TM, or DITO. Additionally, it can check the activity status of a mobile number using the GCash API and an online database.
@@ -14,7 +17,7 @@ Philippine Number Validator is a web-based tool that helps you identify the netw
 
 1. Clone the repository to your local machine.
     ```bash
-    git clone https://github.com/your-username/Philippine-Number-Validator.git
+    git clone https://github.com/jaycee0610/Philippine-Number-Validator.git
     ```
 2. Navigate to the project directory.
     ```bash
