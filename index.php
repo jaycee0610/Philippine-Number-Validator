@@ -197,14 +197,10 @@
             if (index >= phoneNumbers.length) return;
 
             var number = phoneNumbers[index];
-            var url = `https://gxchange-verify.rootscratch.com/${number}`;
+            var url = `https://gxchange-verify.rootscratch.com/${number}/${apiKey}`;
 
             fetch(url, {
-                method: 'POST',
-                headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams({ api_key: apiKey })
+                method: 'GET'
             })
             .then(response => response.json())
             .then(data => {
