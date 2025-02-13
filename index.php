@@ -190,45 +190,40 @@
         document.getElementById('validateActivity').addEventListener('click', function() {
             var phoneNumbers = document.querySelector('#activity_phone_numbers').value.split('\n').filter(Boolean);
             var apiKey = document.getElementById('api_key').value;
-            var interval = apiKey ? 100 : 15000;
             var requestLogs = document.getElementById('requestLogs');
             var liveNumbers = document.getElementById('liveNumbers');
 
             function checkNumber(index) {
-                if (index >= phoneNumbers.length) return;
+            if (index >= phoneNumbers.length) return;
 
-                var number = phoneNumbers[index];
-                var url = `https://gxchange-verify.rootscratch.com/${number}`;
-                var method = apiKey ? 'POST' : 'GET';
-                var headers = apiKey ? {
-                    'Authorization': `Bearer ${apiKey}`
-                } : {};
+            var number = phoneNumbers[index];
+            var url = `https://gxchange-verify.rootscratch.com/${number}`;
 
-                fetch(url, {
-                        method: method,
-                        headers: headers
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        requestLogs.innerText += `Checked ${number}: ${JSON.stringify(data)}\n`;
-                        requestLogs.scrollTop = requestLogs.scrollHeight;
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: new URLSearchParams({ api_key: apiKey })
+            })
+            .then(response => response.json())
+            .then(data => {
+                requestLogs.innerText += `Checked ${number}: ${JSON.stringify(data)}\n`;
+                requestLogs.scrollTop = requestLogs.scrollHeight;
 
-                        if (data.success) {
-                            liveNumbers.value += (liveNumbers.value ? '\n' : '') + number;
-                            document.getElementById('liveCount').innerText = liveNumbers.value.split('\n').length;
-                        }
+                if (data.success) {
+                liveNumbers.value += (liveNumbers.value ? '\n' : '') + number;
+                document.getElementById('liveCount').innerText = liveNumbers.value.split('\n').length;
+                }
 
-                        phoneNumbers.splice(index, 1);
-                        document.querySelector('#activity_phone_numbers').value = phoneNumbers.join('\n');
+                checkNumber(index + 1);
+            })
+            .catch(error => {
+                requestLogs.innerText += `Error checking ${number}: ${error}\n`;
+                requestLogs.scrollTop = requestLogs.scrollHeight;
 
-                        setTimeout(() => checkNumber(index), interval);
-                    })
-                    .catch(error => {
-                        requestLogs.innerText += `Error checking ${number}: ${error}\n`;
-                        requestLogs.scrollTop = requestLogs.scrollHeight;
-
-                        setTimeout(() => checkNumber(index), interval);
-                    });
+                checkNumber(index + 1);
+            });
             }
 
             checkNumber(0);
